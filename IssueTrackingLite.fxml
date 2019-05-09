@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" stylesheets="@IssueTrackingLite.css" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="issuetrackinglite.IssueTrackingLiteController">
+   <styleClass>
+      <String fx:value="mainFxmlClass" />
+      <String fx:value="theme" />
+   </styleClass>
+   <children>
+      <SplitPane dividerPositions="0.25" layoutX="232.0" layoutY="85.0" prefHeight="515.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="85.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <ListView fx:id="list" layoutX="-45.0" layoutY="80.0" prefHeight="600.0" prefWidth="196.0" styleClass="darkList" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+               <children>
+                  <SplitPane dividerPositions="0.39223300970873787" orientation="VERTICAL" prefHeight="600.0" prefWidth="596.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <items>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+                           <children>
+                              <TableView fx:id="table" layoutX="45.0" layoutY="14.0" prefHeight="223.0" prefWidth="596.0" AnchorPane.bottomAnchor="22.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                <columns>
+                                  <TableColumn fx:id="colName" prefWidth="75.0" text="Name:" />
+                                  <TableColumn fx:id="colStatus" prefWidth="75.0" text="Status" />
+                                    <TableColumn fx:id="colSynopsis" prefWidth="75.0" text="Synopsis" />
+                                </columns>
+                              </TableView>
+                           </children>
+                        </AnchorPane>
+                      <AnchorPane fx:id="details" minHeight="0.0" minWidth="0.0" prefHeight="287.0" prefWidth="596.0">
+                           <children>
+                              <HBox layoutX="14.0" layoutY="10.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0">
+                                 <children>
+                                    <Label fx:id="displayedIssueLabel" layoutX="14.0" layoutY="14.0" minWidth="-Infinity" prefHeight="25.0" prefWidth="70.0" text="PROJECT / ID" />
+                                    <TextField fx:id="synopsis" layoutX="92.0" layoutY="10.0" prefHeight="26.0" prefWidth="499.0" text="SYNOPSIS" HBox.hgrow="ALWAYS" />
+                                 </children>
+                              </HBox>
+                              <Label layoutX="14.0" layoutY="55.0" text="DESCRIPTION" />
+                              <TextArea fx:id="descriptionValue" layoutX="8.0" layoutY="72.0" prefHeight="313.0" prefWidth="575.0" AnchorPane.bottomAnchor="1.0" AnchorPane.leftAnchor="8.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="72.0" />
+                           </children></AnchorPane>
+                    </items>
+                  </SplitPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <ImageView fitHeight="24.0" fitWidth="200.0" layoutX="10.0" layoutY="12.0">
+         <image>
+            <Image url="@IssueTrackingLite.png" />
+         </image>
+      </ImageView>
+      <HBox layoutX="556.0" layoutY="7.0" prefHeight="26.0" prefWidth="257.0" spacing="15.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="10.0">
+         <children>
+            <Button fx:id="newIssue" layoutX="626.0" layoutY="24.0" mnemonicParsing="false" onAction="#newIssueFired" text="New" />
+            <Button fx:id="saveIssue" layoutX="636.0" layoutY="11.0" mnemonicParsing="false" onAction="#saveIssueFired" text="Save" />
+            <Button fx:id="deleteIssue" layoutX="646.0" layoutY="35.0" mnemonicParsing="false" onAction="#deleteIssueFired" text="Delete" />
+         </children>
+      </HBox>
+   </children>
+</AnchorPane>
